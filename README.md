@@ -33,7 +33,7 @@ A date table was created to support time-based analysis including Year, Quarter,
 ![Customer Demographics](screenshots/customer_demographic.png)
 
 ### Sales Performance
-![Sales Performance](sales_performance.png)
+![Sales Performance](screenshots/sales_performance.png)
 
 ### Time Series Trends
 ![Time Series Trends](screenshots/time_series.png)
