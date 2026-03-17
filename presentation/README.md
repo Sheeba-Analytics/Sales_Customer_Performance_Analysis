@@ -1,7 +1,7 @@
 
 # Project Presentation
 
-This folder contains the presentation slides summarizing the key findings from the Market Analysis Dashboard project.
+This folder contains the presentation slides summarizing the key findings from the Sales_Customer_Performance_Analysis Dashboard project.
 
 ### The presentation highlights:
 
