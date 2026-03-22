@@ -30,7 +30,7 @@ A date table was created to support time-based analysis including Year, Quarter,
 ![Executive Summary](screenshots/key_performance_indicators.png)
 
 ### Customer Demographics
-![Customer Demographics](screenshots/customer_demographic.png)
+![Customer Demographics](screenshots/customer_demographics.png)
 
 ### Sales Performance
 ![Sales Performance](screenshots/sales_performance.png)
