@@ -1,75 +1,162 @@
-# Sales_Customer_Performance_Analysis
+# Sales & Customer Performance Analysis
 
 ## Project Overview
 
-This project analyzes market performance across four key Latin American countries: Brazil, Chile, Colombia, and Mexico.
+This Power BI project analyses customer demographics, product performance, sales trends, discounts, taxes, and order activity across Brazil, Chile, Colombia, and Mexico from 2020 to 2022.
 
-The analysis focuses on understanding customer demographics, product performance, and sales trends across a three-year period (2020–2022). The goal is to transform raw business data into a clear and interactive dashboard that supports data-driven decision-making.
+The dashboard helps users understand:
 
-## Project Objectives
-
-- Provide a high-level overview of business performance using key KPIs
-- Analyze customer demographics by age group, gender, income group, and country
-- Identify top-performing and underperforming products
-- Understand sales distribution across regions
-- Track sales trends over time (yearly, quarterly, monthly)
-- Enable detailed product-level analysis through drill-through functionality
-
-## Data Model
-
-The analysis uses a star schema structure:
-
-Sales (Fact Table) → Date (Dimension)
-Sales (Fact Table) → Customer (Dimension)
-
-A date table was created to support time-based analysis including Year, Quarter, and Month.
-
-## Dashboard Preview
-
-### Executive Summary
-![Executive Summary](screenshots/key_performance_indicators.png)
-
-### Customer Demographics
-![Customer Demographics](screenshots/customer_demographics.png)
-
-### Sales Performance
-![Sales Performance](screenshots/sales_performance.png)
-
-### Time Series Trends
-![Time Series Trends](screenshots/time_series.png)
-
-## Key Insights
-
-- Total sales reached $311.27M across 44K orders and 1,000 customers.
-- Medium-income customers contribute the largest share of revenue.
-- Customer demographics are relatively balanced across age groups and gender.
-- Home and lifestyle product categories generate the strongest sales performance.
-- Colombia and Chile show slightly stronger regional sales performance.
-- Sales declined slightly in 2021 but recovered strongly in 2022.
-
-## Recommendations
-
-- Use seasonal sales patterns to plan promotions and inventory.
-- Focus marketing on high-performing product categories.
-- Improve sales for underperforming products through targeted promotions.
-- Increase order frequency through bundles and promotional offers.
-- Continue focusing on medium-income customers while maintaining high-value segments.
+- Customer distribution and income segments
+- Gross and net sales performance
+- Product rankings
+- Monthly, quarterly, and yearly sales trends
+- Sales growth compared with previous periods
+- Product-level performance and sales targets
 
 ## Tools Used
 
-Power BI – Data modeling and dashboard visualization
+- Power BI
+- Power Query
+- DAX
+- CSV data files
 
-## Project Structure
+## Dataset
 
-Market-performance-analysis
+The project uses two main datasets:
 
-├── data – dataset used for analysis
+- Customer data: 1,001 registered customers
+- Sales data: 44,342 orders
 
-├── powerbi – Power BI dashboard file
+## Data Preparation
 
-├── screenshots – dashboard preview images
+Power Query was used to:
 
-├── presentation – project presentation slides
+- Correct data types
+- Trim text columns
+- Remove duplicate records
+- Merge customer names
+- Create age groups
+- Create income classifications
+- Parse date columns using the correct locale
+- Calculate shipping duration
+- Validate missing values and errors
 
-└── README.md – project documentation
+## Data Model
 
+The model uses a star-schema structure:
+
+- `Customer` → `Sales`
+- `dDate` → `Sales`
+- `Measures Table` for DAX measures
+- `Field Selection Parameter` for dynamic metric selection
+
+Both relationships are one-to-many with single-direction filtering.
+
+## Key Measures
+
+- Gross Sales
+- Discount Amount
+- Net Sales
+- Tax Amount
+- Sales Including Tax
+- Total Orders
+- Total Quantity
+- Purchasing Customers
+- Registered Customers
+- Average Order Value
+- Average Monthly Gross Sales
+- Previous Month Sales
+- Previous Quarter Sales
+- Previous Year Sales
+- Month-over-Month Sales Change
+- Quarter-over-Quarter Sales Change
+- Year-over-Year Sales Change
+- Monthly Sales Target
+
+## Dashboard Pages
+
+### 1. Customer Demographic
+
+Analyses customers by:
+
+- Age group
+- Gender
+- Country
+- Income level
+- Top customer by gross sales
+
+![Customer Demographic](screenshots/01_Customer_Demographic.png)
+
+### 2. Sales Performance
+
+Analyses:
+
+- Gross sales
+- Net sales
+- Discount amount
+- Tax amount
+- Average order value
+- Top and bottom products
+- Gross sales by country
+- Gross sales by income level
+- Product contribution to total sales
+
+![Sales Performance](screenshots/02_Sales_Performance.png)
+
+### 3. Time Series
+
+Shows:
+
+- Yearly gross sales trend
+- Quarterly gross sales trend
+- Monthly gross sales trend
+- Month-over-month change
+- Quarter-over-quarter change
+- Year-over-year change
+
+![Time Series](screenshots/03_Time_Series.png)
+
+### 4. Product Detail
+
+Provides drill-through analysis for individual products, including:
+
+- Product-level KPIs
+- Monthly sales and order targets
+- Gross sales by gender and income level
+- Monthly YoY sales change
+- Dynamic metric selection
+- Monthly performance trend
+
+![Product Detail](screenshots/04_Product_Detail.png)
+
+## Key Results
+
+- Gross Sales: approximately $311.27M
+- Net Sales: approximately $233.93M
+- Discount Amount: approximately $77.35M
+- Total Orders: 44,342
+- Total Quantity: approximately 244K
+- Purchasing Customers: 1,000
+- Registered Customers: 1,001
+- Average Order Value: approximately $5.28K
+- 2021 gross sales decreased by approximately 2.95% compared with 2020.
+- 2022 gross sales increased slightly by approximately 0.33% compared with 2021.
+
+## Interactive Features
+
+- Product drill-through
+- Report-page tooltip
+- Dynamic metric field parameter
+- Year slicer
+- Clear-selection buttons
+- Cross-filtering between visuals
+- Conditional formatting for growth measures
+
+## Folder Structure
+
+```text
+Sales_Customer_Performance_Analysis/
+├── data/
+├── powerbi/
+├── screenshots/
+└── README.md
